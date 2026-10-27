@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#174c38">
+  <meta name="description" content="EcoColegio: aprende sobre el medio ambiente escolar con juegos, retos ecológicos y un ecoquiz interactivo.">
+  <title>EcoColegio | Unidad Educativa Fiscal Portoviejo</title>
+  <style>
+    :root{--forest:#174c38;--green:#267653;--lime:#d8f36a;--mint:#eaf5ed;--cream:#f7f8f1;--ink:#17352b;--muted:#61746b;--white:#fff;--line:#dce7de;--shadow:0 14px 40px #123c2410}
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:90px} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--cream);color:var(--ink);line-height:1.55}
+    a{color:inherit} button{font:inherit;cursor:pointer} .wrap{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:#f7f8f1ed;backdrop-filter:blur(12px);border-bottom:1px solid #dce7de}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:76px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;letter-spacing:-.5px;font-size:1.2rem}.brand-mark{display:grid;place-items:center;background:var(--lime);width:42px;height:42px;border-radius:14px;font-size:1.45rem}
+    nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap}nav a{text-decoration:none;color:#42584d;font-size:.92rem;font-weight:700}nav a:hover{color:var(--green)}.nav-cta,.btn{border:0;border-radius:999px;background:var(--forest);color:white;padding:12px 18px;text-decoration:none;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:8px}.nav-cta:hover,.btn:hover{background:var(--green)}.btn.alt{background:white;color:var(--forest);border:1px solid var(--line)}.btn.lime{background:var(--lime);color:var(--forest)}
+    .hero{background:var(--forest);color:white;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:470px;height:470px;border-radius:50%;background:#8bcf7620;right:-120px;top:-200px}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:45px;padding:76px 0 82px;position:relative;z-index:1}.eyebrow{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;font-weight:900;color:#bfe779}.hero h1{font-size:clamp(2.7rem,6vw,5.2rem);line-height:.99;letter-spacing:-3px;margin:16px 0 22px;max-width:720px}.hero h1 span{color:var(--lime)}.hero p{font-size:1.1rem;color:#dcece2;max-width:570px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.hero-art{min-height:300px;display:grid;place-items:center;position:relative}.earth{width:min(290px,75vw);aspect-ratio:1;border-radius:50%;background:linear-gradient(145deg,#d8f36a,#87c96c);display:grid;place-items:center;box-shadow:inset -20px -25px 0 #2e82502a,0 30px 80px #061b0d50;font-size:8rem;transform:rotate(-8deg)}.float{position:absolute;background:white;color:var(--forest);padding:12px 16px;border-radius:16px;box-shadow:var(--shadow);font-weight:800}.float.one{top:22px;left:0;transform:rotate(-5deg)}.float.two{bottom:22px;right:0;transform:rotate(4deg)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-27px;position:relative;z-index:2}.stat{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow)}.stat strong{font-size:1.45rem;display:block}.stat span{font-size:.9rem;color:var(--muted)}
+    section{padding:76px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:28px}.kicker{color:var(--green);font-size:.76rem;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}.section-head h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-1.5px;line-height:1.08;margin:8px 0}.section-head p{color:var(--muted);max-width:500px;margin:0}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.feature{background:white;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:230px}.feature .emoji{font-size:2.1rem;margin-bottom:18px}.feature h3{margin:0 0 8px;font-size:1.1rem}.feature p{margin:0 0 20px;color:var(--muted);font-size:.92rem}.feature a{margin-top:auto;color:var(--green);font-weight:900;text-decoration:none}
+    .activity{background:white;border:1px solid var(--line);border-radius:26px;padding:clamp(20px,4vw,34px);box-shadow:var(--shadow)}.activity-top{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:22px}.activity h3{font-size:1.5rem;margin:0 0 4px}.sub{color:var(--muted);margin:0}.pill{background:var(--mint);color:var(--green);border-radius:999px;padding:7px 12px;font-size:.8rem;font-weight:900;white-space:nowrap}.question{font-weight:850;font-size:1.18rem;margin:24px 0 14px}.options{display:grid;grid-template-columns:1fr 1fr;gap:10px}.option,.waste-option{border:1px solid var(--line);background:#fbfcf8;border-radius:14px;padding:14px;text-align:left;color:var(--ink);font-weight:700}.option:hover,.waste-option:hover{border-color:var(--green);background:var(--mint)}.option:disabled{cursor:default;opacity:.88}.feedback{margin:14px 0;font-weight:750;min-height:25px}.feedback.good{color:#267653}.feedback.bad{color:#a33c2c}.quiz-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:20px}.progress{height:8px;background:#e8eee8;border-radius:99px;overflow:hidden;margin-top:10px}.progress>div{height:100%;width:0;background:var(--green);transition:width .3s}
+    .waste-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:22px}.waste-item{background:var(--mint);border-radius:20px;padding:26px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:220px}.waste-item .big{font-size:4rem}.waste-item h4{font-size:1.35rem;margin:6px 0}.waste-bins{display:grid;grid-template-columns:1fr 1fr;gap:10px}.bin{padding:16px 12px;border-radius:16px;border:2px solid transparent;text-align:center;font-weight:850;min-height:100px}.bin span{display:block;font-size:1.8rem}.bin.paper{background:#e8f1ff;color:#245ba5}.bin.plastic{background:#fff0cf;color:#875514}.bin.organic{background:#e4f4df;color:#2b6a36}.bin.general{background:#ececf0;color:#555568}.bin:hover{border-color:currentColor}
+    .challenge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.challenge{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.challenge .week{font-size:.75rem;letter-spacing:1px;text-transform:uppercase;color:var(--green);font-weight:900}.challenge h3{margin:8px 0}.challenge p{color:var(--muted);font-size:.92rem}.challenge label{display:flex;gap:10px;align-items:flex-start;font-weight:750;font-size:.9rem}.challenge input{accent-color:var(--green);width:19px;height:19px;margin-top:2px}
+    .score-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}.score-panel{background:var(--forest);color:white;border-radius:24px;padding:26px}.score-panel h3{font-size:1.4rem;margin:0 0 8px}.score-panel p{color:#dcece2}.field{width:100%;padding:13px 14px;border-radius:12px;border:1px solid #dce7de;font:inherit;margin:8px 0 12px}.score-table{background:white;border:1px solid var(--line);border-radius:24px;padding:22px}.score-row{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}.score-row:last-child{border:0}.rank{width:34px;height:34px;display:grid;place-items:center;border-radius:12px;background:var(--mint);font-weight:900}.points{font-weight:900;color:var(--green)}.note{font-size:.82rem;color:var(--muted);margin-top:12px}
+    .banner{background:var(--lime);border-radius:26px;padding:clamp(24px,5vw,44px);display:flex;align-items:center;justify-content:space-between;gap:25px}.banner h2{font-size:clamp(1.7rem,4vw,2.8rem);line-height:1.08;letter-spacing:-1px;margin:8px 0}.banner p{max-width:560px;margin:0;color:#3d5a40}.banner .leaf{font-size:5rem}
+    footer{background:#102f23;color:#dcece2;padding:32px 0}.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.foot small{color:#b9cfc0}.foot a{color:var(--lime);text-decoration:none;font-weight:800}
+    .mascot-panel{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:center;background:white;border:1px solid var(--line);border-radius:26px;padding:clamp(20px,4vw,34px);box-shadow:var(--shadow)}.mascot-art{background:linear-gradient(145deg,#e7f8d5,#c9edbc);border-radius:22px;min-height:180px;display:grid;place-items:center;font-size:6rem;position:relative}.mascot-art .spark{position:absolute;font-size:1.5rem}.mascot-art .spark.a{top:14px;left:18px}.mascot-art .spark.b{right:18px;bottom:15px}.mascot-panel h2{margin:4px 0 8px;font-size:clamp(1.6rem,4vw,2.4rem)}.mascot-meta{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.mascot-meta span{background:var(--mint);padding:7px 12px;border-radius:999px;font-weight:800;font-size:.85rem}.daily-task{border:1px dashed #a8c9a8;border-radius:16px;padding:14px;margin:14px 0;background:#f8fcf6}.daily-task strong{display:block;margin-bottom:4px}.school-mark{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--lime);border:2px solid #a8c65a;font-size:1.5rem;flex-shrink:0}.school-brand{display:flex;align-items:center;gap:10px}.school-brand small{display:block;color:var(--muted);font-size:.7rem;font-weight:800;letter-spacing:.3px}
+    .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#17352b;color:white;padding:12px 18px;border-radius:999px;box-shadow:var(--shadow);z-index:20;display:none}.toast.show{display:block}
+    @media(max-width:850px){.mascot-panel{grid-template-columns:140px 1fr}.mascot-art{min-height:150px;font-size:5rem}nav{gap:11px}nav a{font-size:.82rem}.cards{grid-template-columns:repeat(2,1fr)}.hero-grid{grid-template-columns:1fr .7fr;gap:15px}.earth{font-size:6rem}.waste-layout,.score-layout{grid-template-columns:1fr}.challenge-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.mascot-panel{grid-template-columns:1fr}.mascot-art{min-height:140px}.nav{padding:12px 0;align-items:flex-start}.brand{font-size:1rem}.brand-mark{width:36px;height:36px}nav{justify-content:flex-end;max-width:220px}nav a{display:none}nav a:last-of-type{display:inline}.nav-cta{padding:9px 12px;font-size:.82rem}.hero-grid{grid-template-columns:1fr;padding:52px 0 60px}.hero h1{letter-spacing:-1.7px}.hero-art{min-height:210px}.earth{width:190px;font-size:5rem}.float.one{left:5%}.float.two{right:5%}.stats{grid-template-columns:1fr;margin-top:-18px}.stat{padding:15px}.section-head{display:block}.section-head p{margin-top:12px}.cards,.challenge-grid,.options,.waste-bins{grid-template-columns:1fr}.feature{min-height:unset}.feature .emoji{margin-bottom:8px}.activity-top{display:block}.pill{display:inline-block;margin-top:10px}.banner{align-items:flex-start}.banner .leaf{font-size:3rem}.foot{display:block}.foot small{display:block;margin-top:10px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio"><span class="brand-mark">📗</span><span>EcoColegio</span></a>
+    <nav aria-label="Navegación principal">
+      <a href="#mascota">Mi mascota</a><a href="#actividades">Actividades</a><a href="#residuos">Reciclaje</a><a href="#retos">Retos</a><a href="#puntos">Puntuaciones</a><a href="#portal">Portal</a>
+      <a class="nav-cta" href="#ecoquiz">¡Jugar ahora! ↗</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">UNIDAD EDUCATIVA FISCAL PORTOVIEJO</div>
+        <h1>Pequeñas acciones.<br><span>Grandes cambios.</span></h1>
+        <p>Bienvenidos a EcoColegio, un espacio de la Unidad Educativa Fiscal Portoviejo para aprender, jugar y cuidar juntos nuestro planeta.</p>
+        <div class="hero-actions"><a class="btn lime" href="#actividades">Explorar actividades →</a><a class="btn alt" href="#retos">Ver reto semanal</a></div>
+      </div>
+      <div class="hero-art" aria-label="Ilustración de planeta">
+        <div class="earth">🐢</div><div class="float one">📗 Unidad Educativa Fiscal</div><div class="float two">🌿 Portoviejo</div>
+      </div>
+    </div>
+  </section>
+  <div class="wrap stats">
+    <div class="stat"><strong>01 · Aprende</strong><span>Descubre hábitos sostenibles.</span></div>
+    <div class="stat"><strong>02 · Actúa</strong><span>Prueba pequeños cambios cada semana.</span></div>
+    <div class="stat"><strong>03 · Comparte</strong><span>Inspira a tu comunidad escolar.</span></div>
+  </div>
+
+  <section id="mascota" style="padding-top:42px;padding-bottom:20px">
+    <div class="wrap">
+      <div class="mascot-panel">
+        <div class="mascot-art" aria-label="Mascota ecológica, tortuguita"><span class="spark a">✨</span>🐢<span class="spark b">🌿</span></div>
+        <div>
+          <div class="kicker">Tu compañera ecológica</div>
+          <h2>¡Cuida a Tuki cada día!</h2>
+          <p class="sub">Tuki es la tortuguita de EcoColegio. Completa la misión diaria para darle una hojita, verla feliz y mantener tu racha de días ecológicos.</p>
+          <div class="mascot-meta"><span id="pet-mood">😊 Tuki está feliz</span><span id="pet-streak">🔥 Racha: 0 días</span><span id="pet-points">🌱 Ecoenergía: 0</span></div>
+          <div class="daily-task"><strong id="daily-title">🌎 Misión de hoy</strong><span id="daily-text">Realiza una pequeña acción para cuidar el planeta.</span></div>
+          <button class="btn" id="feed-pet" type="button">🥬 Completar misión y alimentar a Tuki</button>
+          <p class="note" id="pet-feedback" aria-live="polite">Vuelve cada día para cuidar a Tuki. El progreso se guarda en este navegador.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="actividades">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Tu misión empieza aquí</div><h2>Explora y juega</h2></div><p>Cuatro formas de convertir el aprendizaje ambiental en acciones reales. Elige una actividad y comienza.</p></div>
+      <div class="cards">
+        <article class="feature"><div class="emoji">🧠</div><h3>EcoQuiz</h3><p>Responde preguntas sobre reciclaje, agua, energía y biodiversidad.</p><a href="#ecoquiz">Comenzar cuestionario →</a></article>
+        <article class="feature"><div class="emoji">♻️</div><h3>Detective de residuos</h3><p>Identifica dónde corresponde cada residuo y suma puntos.</p><a href="#residuos">Clasificar residuos →</a></article>
+        <article class="feature"><div class="emoji">🌱</div><h3>Retos semanales</h3><p>Marca las acciones que completes durante la semana.</p><a href="#retos">Aceptar un reto →</a></article>
+        <article class="feature"><div class="emoji">🏆</div><h3>EcoPuntos</h3><p>Consulta tus resultados guardados en este dispositivo.</p><a href="#puntos">Ver puntuaciones →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="ecoquiz" style="background:#edf4ed">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Actividad 01 · 10 preguntas</div><h2>EcoQuiz</h2></div><p>Elige una respuesta. Cada acierto vale 10 puntos y puedes conseguir hasta 100 puntos.</p></div>
+      <div class="activity">
+        <div class="activity-top"><div><h3 id="quiz-title">¿Cuánto sabes del planeta?</h3><p class="sub" id="quiz-count">Pregunta 1 de 10</p><div class="progress"><div id="quiz-progress"></div></div></div><span class="pill" id="quiz-score">0 puntos</span></div>
+        <div id="quiz-area"><div class="question" id="question-text"></div><div class="options" id="quiz-options"></div><div class="feedback" id="quiz-feedback" aria-live="polite"></div></div>
+        <div class="quiz-footer"><span class="sub" id="quiz-tip">¡Lee con atención y confía en lo que sabes!</span><button class="btn" id="quiz-next" type="button" hidden>Siguiente pregunta →</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="residuos">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Actividad 02 · Hasta 100 puntos</div><h2>¿Dónde va este residuo?</h2></div><p>Elige la categoría que mejor corresponde al residuo. Las reglas locales pueden variar: sigue siempre las indicaciones de tu escuela o municipio.</p></div>
+      <div class="activity waste-layout">
+        <div class="waste-item"><div class="big" id="waste-emoji">📰</div><h4 id="waste-name">Periódico limpio</h4><p class="sub" id="waste-desc">¿Dónde lo colocarías?</p><span class="pill" id="waste-count">Residuo 1 de 10</span></div>
+        <div><div class="waste-bins">
+          <button class="bin paper" data-bin="paper"><span>📄</span>Papel y cartón</button>
+          <button class="bin plastic" data-bin="plastic"><span>🧴</span>Envases reciclables</button>
+          <button class="bin organic" data-bin="organic"><span>🍃</span>Orgánicos</button>
+          <button class="bin general" data-bin="general"><span>🗑️</span>No reciclables</button>
+        </div><div class="feedback" id="waste-feedback" aria-live="polite"></div><div class="quiz-footer"><span class="sub" id="waste-score">Puntuación: 0</span><button class="btn" id="waste-next" type="button" hidden>Siguiente residuo →</button><button class="btn alt" id="waste-restart" type="button">Reiniciar juego</button></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="retos" style="background:#edf4ed">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Actividad 03 · Pasa a la acción</div><h2>Retos ambientales</h2></div><p>Elige acciones sencillas y marca las que ya cumpliste. Tu progreso se guarda en este navegador.</p></div>
+      <div class="challenge-grid">
+        <article class="challenge"><div class="week">Reto · Agua</div><h3>💧 Cada gota cuenta</h3><p>Evita dejar correr el agua al lavarte las manos y reporta cualquier fuga en la escuela.</p><label><input type="checkbox" data-challenge="agua"> Completé este reto</label></article>
+        <article class="challenge"><div class="week">Reto · Residuos</div><h3>♻️ Menos desechos</h3><p>Usa una botella reutilizable y separa correctamente tus residuos cuando haya contenedores adecuados.</p><label><input type="checkbox" data-challenge="residuos"> Completé este reto</label></article>
+        <article class="challenge"><div class="week">Reto · Energía</div><h3>💡 Ahorra energía</h3><p>Apaga las luces y los equipos que no se estén usando, siempre con autorización del docente.</p><label><input type="checkbox" data-challenge="energia"> Completé este reto</label></article>
+        <article class="challenge"><div class="week">Reto · Naturaleza</div><h3>🌿 Cuida lo verde</h3><p>Cuida una planta del aula o participa en una actividad de jardinería segura.</p><label><input type="checkbox" data-challenge="naturaleza"> Completé este reto</label></article>
+        <article class="challenge"><div class="week">Reto · Comunidad</div><h3>🧹 Aula limpia</h3><p>Deja tu espacio limpio y recoge únicamente residuos seguros usando las normas del colegio.</p><label><input type="checkbox" data-challenge="aula"> Completé este reto</label></article>
+        <article class="challenge"><div class="week">Reto · Difusión</div><h3>📣 Comparte una idea</h3><p>Cuenta a un compañero un hábito ecológico que pueda aplicar en la escuela o en casa.</p><label><input type="checkbox" data-challenge="difusion"> Completé este reto</label></article>
+      </div>
+      <p class="note" id="challenge-progress">Has completado 0 de 6 retos.</p>
+    </div>
+  </section>
+
+  <section id="puntos">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Actividad 04 · Tu progreso</div><h2>Tabla de EcoPuntos</h2></div><p>Guarda un nombre o apodo y tu mejor puntuación en este dispositivo. No uses datos personales sensibles.</p></div>
+      <div class="score-layout">
+        <div class="score-panel"><h3>🏆 Registra tus puntos</h3><p>Al terminar el EcoQuiz o el juego de residuos, suma tus puntos aquí.</p><label for="player-name">Nombre o apodo</label><input class="field" id="player-name" maxlength="20" placeholder="Ej. EcoExplorador"><label for="player-points">Puntos obtenidos</label><input class="field" id="player-points" type="number" min="0" max="10000" value="0"><button class="btn lime" id="save-score" type="button">Guardar puntuación</button><p class="note" style="color:#dcece2">Privacidad: no escribas apellidos completos, teléfonos, direcciones ni otros datos privados.</p></div>
+        <div class="score-table"><div class="activity-top"><div><h3>🌟 Mejores resultados</h3><p class="sub">Guardados localmente en este navegador</p></div><span class="pill" id="leader-count">0 resultados</span></div><div id="leaderboard"><p class="sub">Aún no hay puntuaciones. ¡Sé la primera persona en participar!</p></div><p class="note">Esta tabla no se comparte automáticamente con otros visitantes y puede borrarse si se limpia el almacenamiento del navegador.</p><button class="btn alt" id="clear-scores" type="button">Borrar tabla de este dispositivo</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap"><div class="banner"><div><div class="kicker">Nuestro compromiso</div><h2>Un colegio más verde empieza contigo.</h2><p>No necesitas hacer algo enorme para ayudar al planeta. Una buena decisión, repetida por muchas personas, puede convertirse en un gran cambio.</p><div style="margin-top:20px"><a class="btn" href="#inicio">Volver al inicio ↑</a></div></div><div class="leaf">🌎</div></div></div>
+  </section>
+</main>
+<footer><div class="wrap foot"><div><div class="school-brand"><span class="school-mark">📗🌿</span><div><a class="brand" href="#inicio"><span>EcoColegio</span></a><small>UNIDAD EDUCATIVA FISCAL PORTOVIEJO</small></div></div><small>Educación ambiental para una comunidad escolar más sostenible.</small></div><small>Hecho para aprender, participar y cuidar nuestro planeta. © <span id="year"></span></small></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const $ = (id) => document.getElementById(id);
+const safeStore = {
+  get(key, fallback){ try { const v=localStorage.getItem(key); return v===null?fallback:JSON.parse(v); } catch(e){ return fallback; } },
+  set(key, value){ try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch(e){ return false; } }
+};
+function toast(message){ const el=$('toast'); el.textContent=message; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),2400); }
+$('year').textContent = new Date().getFullYear();
+
+const questions = [
+ {q:'¿Cuál es una buena forma de reducir residuos en la escuela?',a:['Usar una botella reutilizable','Comprar una botella nueva cada recreo','Tirar todo en el mismo tacho','Usar más envolturas desechables'],correct:0,why:'Una botella reutilizable reduce la cantidad de envases de un solo uso.'},
+ {q:'¿Qué deberías hacer si ves una llave de agua goteando?',a:['Ignorarla','Avisar a un docente o responsable','Jugar con el agua','Dejarla abierta'],correct:1,why:'Avisar permite que la fuga se repare y evita desperdiciar agua.'},
+ {q:'¿Qué acción ayuda a ahorrar electricidad?',a:['Dejar luces encendidas en aulas vacías','Abrir el refrigerador muchas veces','Apagar equipos que no se usan, con permiso','Encender todas las luces al salir'],correct:2,why:'Apagar luces y equipos que no se necesitan ayuda a reducir el consumo eléctrico.'},
+ {q:'¿Qué se debe hacer antes de reciclar un envase, si las reglas locales lo requieren?',a:['Llenarlo de tierra','Mezclarlo con restos de comida','Aplastarlo siempre aunque no se permita','Vaciarlo y prepararlo según las indicaciones locales'],correct:3,why:'Los requisitos varían según el sistema de reciclaje; sigue las instrucciones de tu localidad.'},
+ {q:'¿Por qué son importantes los árboles en los espacios escolares?',a:['Porque pueden dar sombra y servir de hábitat','Porque producen basura plástica','Porque siempre necesitan que los pinten','Porque impiden toda forma de vida'],correct:0,why:'Los árboles pueden dar sombra, apoyar la biodiversidad y contribuir al bienestar del entorno.'},
+ {q:'¿Qué puedes hacer con una hoja de papel usada por un solo lado?',a:['Botarla de inmediato','Usar el lado limpio para tomar apuntes','Mojarla y dejarla en el patio','Quemarla'],correct:1,why:'Reutilizar el papel ayuda a reducir residuos.'},
+ {q:'¿Cuál de estas acciones ayuda a cuidar la biodiversidad?',a:['Molestar a los animales','Arrancar todas las flores','Respetar plantas y animales de su entorno','Dejar basura en áreas verdes'],correct:2,why:'Respetar los seres vivos ayuda a conservar los ecosistemas.'},
+ {q:'¿Qué conviene llevar para evitar fundas desechables?',a:['Una bolsa reutilizable','Más envolturas','Una botella desechable cada vez','Ninguna opción'],correct:0,why:'Las bolsas reutilizables ayudan a reducir los residuos.'},
+ {q:'Si ves basura en el patio, ¿qué es lo mejor?',a:['Patearla a otro lugar','Esconderla debajo de una planta','Dejarla para siempre','Recogerla si es seguro y colocarla donde corresponda'],correct:3,why:'Mantener limpio el patio es una responsabilidad compartida; evita tocar residuos peligrosos.'},
+ {q:'¿Qué significa reutilizar?',a:['Usar algo nuevamente para el mismo u otro propósito','Comprar todo nuevo','Mezclar todos los residuos','Gastar más agua'],correct:0,why:'Reutilizar alarga la vida útil de los objetos y evita generar basura.'}
+];
+let qIndex=0, qScore=0, qAnswered=false;
+function renderQuestion(){
+ const q=questions[qIndex]; qAnswered=false;
+ $('quiz-title').textContent='¿Cuánto sabes del planeta?'; $('quiz-count').textContent=`Pregunta ${qIndex+1} de ${questions.length}`;
+ $('quiz-progress').style.width=`${qIndex/questions.length*100}%`; $('quiz-score').textContent=`${qScore} puntos`;
+ $('question-text').textContent=q.q; $('quiz-feedback').textContent=''; $('quiz-feedback').className='feedback'; $('quiz-next').hidden=true;
+ $('quiz-options').innerHTML='';
+ q.a.forEach((answer,i)=>{const b=document.createElement('button');b.className='option';b.textContent=answer;b.type='button';b.addEventListener('click',()=>answerQuestion(i));$('quiz-options').appendChild(b);});
+}
+function answerQuestion(i){
+ if(qAnswered)return; qAnswered=true; const q=questions[qIndex]; const buttons=[...$('quiz-options').querySelectorAll('button')]; buttons.forEach(b=>b.disabled=true);
+ const fb=$('quiz-feedback');
+ if(i===q.correct){qScore+=10;fb.textContent='¡Muy bien! +10 puntos. '+q.why;fb.className='feedback good';buttons[i].style.borderColor='#267653';}
+ else{fb.textContent='¡Sigue aprendiendo! '+q.why;fb.className='feedback bad';buttons[i].style.borderColor='#a33c2c';buttons[q.correct].style.borderColor='#267653';}
+ $('quiz-score').textContent=`${qScore} puntos`; $('quiz-progress').style.width=`${(qIndex+1)/questions.length*100}%`;
+ $('quiz-next').hidden=false; $('quiz-next').textContent=qIndex===questions.length-1?'Ver resultado →':'Siguiente pregunta →'; $('player-points').value=String(qScore);
+}
+$('quiz-next').addEventListener('click',()=>{
+ if(qIndex<questions.length-1){qIndex++;renderQuestion();}
+ else{$('quiz-title').textContent='¡Quiz completado!';$('quiz-count').textContent=`Obtuviste ${qScore} de ${questions.length*10} puntos`; $('question-text').textContent=qScore>=40?'¡Excelente trabajo, guardián del planeta!':qScore>=20?'¡Buen esfuerzo! Sigue aprendiendo y vuelve a intentarlo.':'¡Gracias por participar! Cada intento te ayuda a aprender.';$('quiz-options').innerHTML='';$('quiz-feedback').textContent='Puedes registrar tu puntuación en la tabla de EcoPuntos.';$('quiz-feedback').className='feedback good';$('quiz-next').hidden=false;$('quiz-next').textContent='Volver a intentarlo ↻';$('quiz-next').onclick=()=>{qIndex=0;qScore=0;$('quiz-next').onclick=null;renderQuestion();};}
+});
+renderQuestion();
+
+const wastes=[
+ {emoji:'📰',name:'Periódico limpio',desc:'Papel sin restos de comida',bin:'paper'},
+ {emoji:'🍌',name:'Cáscara de banana',desc:'Residuo de origen vegetal',bin:'organic'},
+ {emoji:'🧴',name:'Botella plástica vacía',desc:'Envase vacío; revisa las normas locales',bin:'plastic'},
+ {emoji:'📦',name:'Caja de cartón limpia',desc:'Cartón sin grasa ni restos',bin:'paper'},
+ {emoji:'🥬',name:'Restos de lechuga',desc:'Residuo de comida',bin:'organic'},
+ {emoji:'🧻',name:'Pañuelo usado',desc:'Papel contaminado que normalmente no se recicla',bin:'general'},
+ {emoji:'🥫',name:'Lata vacía limpia',desc:'Revisa si el sistema local recibe latas',bin:'plastic'},
+ {emoji:'🍂',name:'Hojas secas',desc:'Residuo vegetal del jardín',bin:'organic'},
+ {emoji:'📄',name:'Hoja limpia usada',desc:'Papel que puede recuperarse si está limpio',bin:'paper'},
+ {emoji:'🍱',name:'Envase con restos de comida',desc:'Retira los restos y sigue las normas locales',bin:'general'}
+];
+let wIndex=0,wScore=0,wAnswered=false;
+function renderWaste(){const w=wastes[wIndex];wAnswered=false;$('waste-emoji').textContent=w.emoji;$('waste-name').textContent=w.name;$('waste-desc').textContent=w.desc;$('waste-count').textContent=`Residuo ${wIndex+1} de ${wastes.length}`;$('waste-feedback').textContent='';$('waste-feedback').className='feedback';$('waste-next').hidden=true;$('waste-score').textContent=`Puntuación: ${wScore}`;document.querySelectorAll('.bin').forEach(b=>{b.disabled=false;b.style.opacity='1';});}
+document.querySelectorAll('.bin').forEach(btn=>btn.addEventListener('click',()=>{if(wAnswered)return;wAnswered=true;const w=wastes[wIndex];document.querySelectorAll('.bin').forEach(b=>b.disabled=true);if(btn.dataset.bin===w.bin){wScore+=10;$('waste-feedback').textContent='¡Correcto! +10 puntos. '+w.desc+'.';$('waste-feedback').className='feedback good';}else{$('waste-feedback').textContent='Casi. La categoría esperada es: '+({paper:'Papel y cartón',plastic:'Envases reciclables',organic:'Orgánicos',general:'No reciclables'}[w.bin])+'. Recuerda seguir las reglas de tu localidad.';$('waste-feedback').className='feedback bad';} $('waste-score').textContent=`Puntuación: ${wScore}`;$('player-points').value=String(wScore);$('waste-next').hidden=false;$('waste-next').textContent=wIndex===wastes.length-1?'Ver resultado →':'Siguiente residuo →';}));
+$('waste-next').addEventListener('click',()=>{if(wIndex<wastes.length-1){wIndex++;renderWaste();}else{ $('waste-name').textContent='¡Juego completado!';$('waste-desc').textContent=`Conseguiste ${wScore} de ${wastes.length*10} puntos.`;$('waste-emoji').textContent='🏆';$('waste-feedback').textContent='Registra tu puntuación en la tabla de EcoPuntos.';$('waste-next').hidden=true;wIndex=0;}});
+$('waste-restart').addEventListener('click',()=>{wIndex=0;wScore=0;renderWaste();});renderWaste();
+
+const challengeChecks=[...document.querySelectorAll('[data-challenge]')];
+const savedChallenges=safeStore.get('ecocolegio-challenges',[]);
+challengeChecks.forEach(c=>{c.checked=savedChallenges.includes(c.dataset.challenge);c.addEventListener('change',()=>{const selected=challengeChecks.filter(x=>x.checked).map(x=>x.dataset.challenge);safeStore.set('ecocolegio-challenges',selected);updateChallenges();});});
+function updateChallenges(){const n=challengeChecks.filter(c=>c.checked).length;$('challenge-progress').textContent=`Has completado ${n} de ${challengeChecks.length} retos.${n===challengeChecks.length?' ¡Excelente compromiso!':''}`;}updateChallenges();
+
+const dailyMissions=[
+ {title:'🌎 Misión de hoy: ahorra agua',text:'Cierra la llave mientras te enjabonas las manos.'},
+ {title:'♻️ Misión de hoy: reduce residuos',text:'Evita un producto desechable y elige una opción reutilizable.'},
+ {title:'💡 Misión de hoy: ahorra energía',text:'Apaga una luz que no se esté usando, con permiso si hace falta.'},
+ {title:'🌿 Misión de hoy: cuida la naturaleza',text:'Observa una planta y evita dañar sus hojas o flores.'},
+ {title:'🧹 Misión de hoy: espacio limpio',text:'Deja limpio tu puesto o recoge un residuo seguro.'},
+ {title:'📣 Misión de hoy: comparte',text:'Cuéntale a alguien un consejo para cuidar el planeta.'},
+ {title:'💧 Misión de hoy: botella reutilizable',text:'Si tienes una, úsala para evitar comprar una botella desechable.'}
+];
+const todayKey=new Date().toLocaleDateString('en-CA');
+const petData=safeStore.get('ecocolegio-pet',{lastDay:'',streak:0,energy:0});
+const dayIndex=Math.floor(Date.now()/86400000)%dailyMissions.length;
+$('daily-title').textContent=dailyMissions[dayIndex].title;$('daily-text').textContent=dailyMissions[dayIndex].text;
+function paintPet(){ $('pet-streak').textContent=`🔥 Racha: ${petData.streak} día${petData.streak===1?'':'s'}`; $('pet-points').textContent=`🌱 Ecoenergía: ${petData.energy}`; $('pet-mood').textContent=petData.lastDay===todayKey?'🥰 ¡Tuki está feliz!':'😊 Tuki te espera'; if(petData.lastDay===todayKey){$('feed-pet').disabled=true;$('feed-pet').textContent='💚 ¡Ya alimentaste a Tuki hoy!';$('pet-feedback').textContent='¡Misión cumplida! Regresa mañana para cuidar de nuevo a Tuki.';} }
+$('feed-pet').addEventListener('click',()=>{if(petData.lastDay===todayKey){toast('¡Ya alimentaste a Tuki hoy!');return;}const yesterday=new Date(Date.now()-86400000).toLocaleDateString('en-CA');petData.streak=petData.lastDay===yesterday?petData.streak+1:1;petData.lastDay=todayKey;petData.energy+=10;safeStore.set('ecocolegio-pet',petData);paintPet();toast('¡Tuki recibió su hojita! +10 Ecoenergía');});
+paintPet();
+
+function getScores(){return safeStore.get('ecocolegio-scores',[]);}
+function renderScores(){const scores=getScores().sort((a,b)=>b.points-a.points).slice(0,10);$('leader-count').textContent=`${scores.length} resultado${scores.length===1?'':'s'}`;const box=$('leaderboard');box.innerHTML='';if(!scores.length){box.innerHTML='<p class="sub">Aún no hay puntuaciones. ¡Sé la primera persona en participar!</p>';return;}scores.forEach((s,i)=>{const row=document.createElement('div');row.className='score-row';const rank=document.createElement('span');rank.className='rank';rank.textContent=String(i+1);const name=document.createElement('strong');name.textContent=s.name;const pts=document.createElement('span');pts.className='points';pts.textContent=`${s.points} pts`;row.append(rank,name,pts);box.appendChild(row);});}
+$('save-score').addEventListener('click',()=>{const name=$('player-name').value.trim();const points=Number($('player-points').value);if(!name){toast('Escribe un nombre o apodo primero.');$('player-name').focus();return;}if(!Number.isFinite(points)||points<0||points>10000){toast('Escribe una puntuación válida.');return;}const scores=getScores();scores.push({name:name.slice(0,20),points:Math.round(points)});if(!safeStore.set('ecocolegio-scores',scores)){toast('El navegador no permitió guardar los datos.');return;}renderScores();toast('¡Puntuación guardada en este dispositivo!');});
+$('clear-scores').addEventListener('click',()=>{if(confirm('¿Borrar todas las puntuaciones guardadas en este navegador?')){safeStore.set('ecocolegio-scores',[]);renderScores();toast('Tabla borrada en este dispositivo.');}});
+renderScores();
+
+// Portal ampliado: demostración local (sin cuentas reales ni almacenamiento seguro).
+const demoRole = document.getElementById('demo-role');
+const roleDescription = document.getElementById('role-description');
+const roleCopy = {
+ student: 'Como estudiante, podrás enviar evidencias de tus misiones y consultar su estado.',
+ teacher: 'Como docente, podrás revisar las evidencias de los cursos que tengas asignados y aprobarlas o pedir correcciones.',
+ admin: 'Como administrador, podrás gestionar cuentas, cursos, docentes, misiones y reportes.'
+};
+demoRole.addEventListener('change', () => { roleDescription.textContent = roleCopy[demoRole.value]; });
+let demoEvidence = null;
+const evidenceFile = document.getElementById('evidence-file');
+const evidencePreview = document.getElementById('evidence-preview');
+const evidenceStatus = document.getElementById('evidence-status');
+const teacherQueue = document.getElementById('teacher-queue');
+const teacherStatus = document.getElementById('teacher-status');
+let evidenceUrl = null;
+evidenceFile.addEventListener('change', () => {
+  if (evidenceUrl) URL.revokeObjectURL(evidenceUrl);
+  const file = evidenceFile.files && evidenceFile.files[0];
+  if (!file) { evidencePreview.hidden = true; evidencePreview.removeAttribute('src'); return; }
+  if (!file.type.startsWith('image/')) { evidenceStatus.textContent='Selecciona un archivo de imagen.'; evidenceFile.value=''; return; }
+  evidenceUrl = URL.createObjectURL(file);
+  evidencePreview.src = evidenceUrl;
+  evidencePreview.hidden = false;
+  evidenceStatus.textContent='Vista previa local lista. Aún no se ha subido a un servidor.';
+});
+document.getElementById('submit-evidence').addEventListener('click', () => {
+  const file = evidenceFile.files && evidenceFile.files[0];
+  if (!file) { evidenceStatus.textContent='Primero selecciona una fotografía de ejemplo.'; return; }
+  demoEvidence = {mission:document.getElementById('mission-select').value, note:document.getElementById('evidence-note').value.trim(), status:'Pendiente de revisión'};
+  teacherQueue.textContent='Misión: '+demoEvidence.mission+' · Estado: '+demoEvidence.status+(demoEvidence.note?' · Comentario: '+demoEvidence.note:'');
+  evidenceStatus.textContent='Envío simulado realizado en esta página. No se ha guardado en línea.';
+  teacherStatus.textContent='La evidencia de demostración está pendiente de revisión.';
+});
+function reviewDemoEvidence(action, message) {
+  if (!demoEvidence) { teacherStatus.textContent='Primero envía una evidencia de demostración desde la tarjeta de estudiante.'; return; }
+  demoEvidence.status=action;
+  teacherQueue.textContent='Misión: '+demoEvidence.mission+' · Estado: '+action+(demoEvidence.note?' · Comentario: '+demoEvidence.note:'');
+  teacherStatus.textContent=message;
+  evidenceStatus.textContent='Estado de demostración actualizado: '+action+'.';
+}
+document.getElementById('approve-evidence').addEventListener('click',()=>reviewDemoEvidence('Aprobada','Demostración: la misión se marca como aprobada. En la versión real, solo entonces se otorgarán los puntos.'));
+document.getElementById('request-correction').addEventListener('click',()=>reviewDemoEvidence('Corrección solicitada','Demostración: se solicita al estudiante corregir o volver a enviar la evidencia.'));
+document.getElementById('reject-evidence').addEventListener('click',()=>reviewDemoEvidence('Rechazada','Demostración: la evidencia no cumple los criterios. En el sistema real, se informaría el motivo.'));
+const courseSelect=document.getElementById('course-select');
+const courseSummary=document.getElementById('course-summary');
+const coursePoints={'1.º de Bachillerato':85,'2.º de Bachillerato':100,'3.º A Técnico':120,'3.º B Técnico':70};
+courseSelect.addEventListener('change',()=>{courseSummary.textContent=courseSelect.value+' · Puntos demostrativos: '+coursePoints[courseSelect.value];});
+
+</script>
+</body>
+</html>
